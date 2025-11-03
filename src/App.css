@@ -1,0 +1,163 @@
+/* --- Main App Layout & Theme --- */
+.app-container {
+  display: flex;
+  height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: #f0f2f5; 
+}
+
+.main-content {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  overflow: auto; 
+}
+
+.artboard {
+  background-color: #3c3154;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0; 
+}
+
+/* --- Sidebar Styling --- */
+.sidebar {
+  width: 300px;
+  flex-shrink: 0;
+  background: #ffffff; 
+  border-right: 1px solid #ddd;
+  padding: 1.5rem;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.sidebar p {
+  font-size: 0.875rem;
+  color: #555;
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.upload-button-label {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background-color: #6e55ff; 
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  box-sizing: border-box;
+}
+
+.upload-button-label:hover {
+  background-color: #5844d1;
+}
+
+.upload-input-hidden {
+  display: none;
+}
+
+/* --- Thumbnail Gallery --- */
+.thumbnail-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 10px;
+  margin-top: 1rem;
+}
+
+.thumbnail {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 8px; 
+  border: 1px solid #ccc;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.thumbnail:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* --- Image Frame Styling --- */
+.image-frame-container {
+  position: relative;
+  background: #f8f8f8;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+  width: 100%;
+  height: 100%;
+  display: block; 
+}
+
+.image-frame-wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative; 
+}
+
+.image-frame-placeholder-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.image-frame-placeholder {
+  color: #aaa;
+  font-family: sans-serif;
+  cursor: default;
+  user-select: none;
+}
+
+.pannable-image-style {
+  user-select: none;
+  display: block;
+  position: absolute; 
+}
+
+/* --- Drag Over State --- */
+.image-frame-container.drag-over {
+  border-color: #ffffff !important;
+  box-shadow: 0 0 0 3px #6e55ff, 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* --- Resize Handles --- */
+.resize-handle {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: #6e55ff; 
+  border: 2px solid white;
+  border-radius: 50%;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+  z-index: 10;
+  box-sizing: border-box;
+}
+
+/* --- Crop Effect --- */
+.crop-overlay {
+  position: fixed;
+  inset: 0;
+  background: transparent;
+  z-index: 1000;
+  cursor: pointer;
+}
+
+.crop-spotlight-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.7);
+  pointer-events: none;
+}
