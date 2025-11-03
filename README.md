@@ -2,9 +2,6 @@
 
 This is a simple web application built using React, inspired by some of the features of Canva.
 
-## Project Purpose
-
-(Add a 1-2 sentence description here. For example: "This project is a small image editor that allows users to apply filters and text to an image.")
 
 ---
 
